@@ -1,6 +1,19 @@
 import Grid from "./grid.js";
 import Tile from "./tile.js";
 
+document
+  .getElementById("up-btn")
+  .addEventListener("click", () => handleInput({ key: "ArrowUp" }));
+document
+  .getElementById("down-btn")
+  .addEventListener("click", () => handleInput({ key: "ArrowDown" }));
+document
+  .getElementById("left-btn")
+  .addEventListener("click", () => handleInput({ key: "ArrowLeft" }));
+document
+  .getElementById("right-btn")
+  .addEventListener("click", () => handleInput({ key: "ArrowRight" }));
+
 const gameBoard = document.getElementById("game-board");
 
 const grid = new Grid(gameBoard);
@@ -13,7 +26,7 @@ function setupInput() {
 }
 
 async function handleInput(e) {
-    console.log(e.key);
+  console.log(e.key);
 
   switch (e.key) {
     case "ArrowUp":
